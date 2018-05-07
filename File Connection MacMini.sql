@@ -1,0 +1,46 @@
+/*
+	Create a connection and Import
+*/
+
+TRUNCATE TABLE SPORTS.TEAMS;
+
+/*
+DROP CONNECTION IF EXISTS MacMini_FileServer_Futbol;
+
+CREATE CONNECTION MacMini_FileServer_Futbol
+	TO '/Users/MacDesktop/Documents/_ImportSource/Futbol/';
+	
+ 
+IMPORT INTO SPORTS.TEAMS (SPORT_NAME, LEAGUE_NAME, TEAM_NAME, TEAM_INAUGURAL_YEAR) FROM CSV 
+	AT MacMini_FileServer_Futbol
+	FILE 'Teams2.csv'
+	ENCODING = 'UTF-8' 
+	COLUMN SEPARATOR = ',' 
+	ROW SEPARATOR = 'LF' 
+	SKIP = 1
+	;
+
+
+*/
+
+IMPORT INTO SPORTS.TEAMS (SPORT_NAME, LEAGUE_NAME, TEAM_NAME, TEAM_INAUGURAL_YEAR, OTHER, OTHER2) FROM LOCAL CSV 
+	FILE '/Users/MacDesktop/Documents/_ImportSource/Futbol/Teams.csv'
+	ENCODING = 'UTF-8' 
+	COLUMN SEPARATOR = ',' 
+	ROW SEPARATOR = 'LF' 
+	SKIP = 1
+	;
+
+SELECT * FROM SPORTS.TEAMS ;
+
+
+
+/*
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+*/

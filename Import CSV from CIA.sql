@@ -1,0 +1,75 @@
+/*
+ git clone http://github.com/IntelligentEdge/cia-exasol
+ 
+ local path
+ 
+ 	/Users/MacDesktop/Documents/_ImportSource/cia-factbook/...
+  
+ */
+
+
+DELETE FROM [cia-factbook].COMMUNICATION;
+
+IMPORT INTO [cia-factbook].COMMUNICATION FROM LOCAL CSV FILE '/Users/MacDesktop/Documents/_ImportSource/cia-factbook/communication.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO COUNTRY FROM LOCAL CSV FILE '&mydatadirectory/country.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO ECONOMY FROM LOCAL CSV FILE '&mydatadirectory/economy.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO HEALTH FROM LOCAL CSV FILE '&mydatadirectory/health.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO MILITARY FROM LOCAL CSV FILE '&mydatadirectory/military.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO PHYSICAL FROM LOCAL CSV FILE '&mydatadirectory/physical.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO POPULATION FROM LOCAL CSV FILE '&mydatadirectory/population.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
+
+IMPORT INTO TRANSPORT FROM LOCAL CSV FILE '&mydatadirectory/transport.txt' 
+ENCODING = 'UTF-8' 
+ROW SEPARATOR = 'LF' 
+COLUMN SEPARATOR = '#' 
+COLUMN DELIMITER = '"' 
+SKIP = 0 
+REJECT LIMIT 0;
